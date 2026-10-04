@@ -18,7 +18,7 @@ const Navbar = async () => {
   const categories = [{ title: "হোম", slug: "/" }, ...navFilter];
 
   return (
-    <nav className="w-full border-b border-gray-100 py-3">
+    <nav className="w-full py-1">
       <div className="flex justify-center items-center gap-6 md:gap-8 flex-wrap px-4">
         {categories.map((nav, ind) => {
           const isHome = nav.slug === "/";

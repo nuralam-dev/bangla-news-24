@@ -7,7 +7,7 @@ const Header = () => {
   });
 
   return (
-    <header className="w-full bg-white border-b border-gray-100 py-4 px-6 md:px-12">
+    <header className="w-full bg-white py-4 px-6 md:px-12">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Left Side: Spacer for balanced centering (optional) */}
         <div className="hidden md:block w-36"></div>
