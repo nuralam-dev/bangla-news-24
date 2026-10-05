@@ -1,5 +1,6 @@
 
 import Image from "next/image";
+import Link from "next/link";
 
 interface News {
   id: string | number;
@@ -52,9 +53,10 @@ const NewsCard = ({ news }: NewsCardProps) => {
             সর্বশেষ খবর
           </span>
 
+          <Link href={`/news/${news.id}`}>
           <button className="text-sm font-semibold text-red-600 transition-colors hover:text-red-800">
             বিস্তারিত →
-          </button>
+          </button></Link>
         </div>
       </div>
     </article>

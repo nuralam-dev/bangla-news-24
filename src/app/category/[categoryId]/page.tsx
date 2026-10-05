@@ -1,10 +1,21 @@
 import NewsCard from "@/components/NewsCard";
 
-const CategoryPage = async ({ params }) => {
+interface ICategory {
+  title: string;
+  id: string;
+}
+
+interface IParams {
+  params: Promise<{
+    categoryId: string;
+  }>;
+}
+
+const CategoryPage = async ({ params }: IParams) => {
   const { categoryId } = await params;
 
   const res = await fetch(
-    `https://news-api-v2.vercel.app/api/category/${categoryId}`,
+    `https://news-api-v2.vercel.app/api/category/${categoryId}`
   );
 
   if (!res.ok) {
@@ -13,11 +24,13 @@ const CategoryPage = async ({ params }) => {
 
   const data = await res.json();
 
-  const categoryNews = data.data;
+  const categoryNews: ICategory[] = data.data;
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8">
-      <h1 className="mb-6 text-3xl font-bold border-b-2 border-b-red-700">{data.title}</h1>
+      <h1 className="mb-6 border-b-2 border-b-red-700 text-3xl font-bold">
+        {data.title}
+      </h1>
 
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {categoryNews.map((news) => (
