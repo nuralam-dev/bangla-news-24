@@ -19,16 +19,16 @@ export interface IHeader {
 const Marquee = async () => {
   const res = await fetch("https://news-api-v2.vercel.app/api/news?limit=10");
   const data = await res.json();
-  const headLine = await data.data;
-  console.log(headLine);
+  const headLine: IHeader[] = await data.data;
+
   return (
     <div className="bg-red-700">
       <div className="flex items-center max-w-7xl mx-auto">
-        <div className="bg-red-800 text-white p-1">
+        <div className="bg-red-800 text-white p-1 font-bold">
           <p>সর্বশেষ</p>
         </div>
         <MarqueeText className=" text-white" direction="right" duration={15}>
-          {headLine.map((h: IHeader, ind: number) => (
+          {headLine.map((h, ind: number) => (
             <span key={ind}>
               <span>{h.title}</span>
               <span className="mx-5">•</span>
