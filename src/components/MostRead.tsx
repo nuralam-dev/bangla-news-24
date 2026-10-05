@@ -1,16 +1,15 @@
-const MostRead = async () => {
-  const res = await fetch("https://news-api-v2.vercel.app/api/news/most-read", {
-    cache: "no-store",
-  });
+interface IMostread {
+  id: string;
+  title: string;
+}
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch most-read news");
-  }
+const MostRead = async () => {
+  const res = await fetch("https://news-api-v2.vercel.app/api/news/most-read");
 
   const result = await res.json();
 
   // Handle different API response structures
-  const newsList = Array.isArray(result)
+  const newsList: IMostread[] = Array.isArray(result)
     ? result
     : Array.isArray(result.data)
       ? result.data

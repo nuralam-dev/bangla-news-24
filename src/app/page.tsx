@@ -20,7 +20,7 @@ interface IType {
 }
 
 import MainNews from "@/components/MainNews";
-import Marquee from "@/components/Marquee";
+
 import MostRead from "@/components/MostRead";
 import NewsCard from "@/components/NewsCard";
 
@@ -42,7 +42,7 @@ const Page = async () => {
 
   return (
     <div>
-      <Marquee />
+      
 
       <div className="grid grid-cols-3 max-w-7xl mx-auto gap-1">
         {/* Main News */}
