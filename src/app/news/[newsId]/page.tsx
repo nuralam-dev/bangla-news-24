@@ -11,7 +11,7 @@ const NewsDetails = async ({ params }: { params: { newsId: string } }) => {
   console.log(news);
 
   return (
-    <div>
+    <div className="max-w-7xl mx-auto">
       <h1>{news.title}</h1>
       {/* image */}
 
