@@ -36,5 +36,7 @@ Make sure you have Node.js and npm/yarn/pnpm installed.
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/your-username/your-news-portal.git](https://github.com/your-username/your-news-portal.git)
+   git clone [https://github.com/nuralam-dev/your-news-portal.git](https://github.com/nuralam-dev/your-news-portal.git)
    cd your-news-portal
+
+   live : https://bangla-news-24-bruh.vercel.app/
