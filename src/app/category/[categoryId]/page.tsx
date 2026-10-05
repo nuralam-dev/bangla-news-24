@@ -1,8 +1,10 @@
 import NewsCard from "@/components/NewsCard";
 
-interface ICategory {
-  title: string;
+interface INewsItem {
   id: string;
+  title: string;
+  imageUrl: string;
+  [key: string]: unknown; // Allows additional properties coming from the API
 }
 
 interface IParams {
@@ -24,7 +26,7 @@ const CategoryPage = async ({ params }: IParams) => {
 
   const data = await res.json();
 
-  const categoryNews: ICategory[] = data.data;
+  const categoryNews: INewsItem[] = data.data;
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8">
